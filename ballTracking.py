@@ -6,7 +6,6 @@ import cv2
 import imutils
 import time
 import threading
-
 from networktables import NetworkTables
 
 # Initialize NetworkTables Connection
@@ -20,7 +19,7 @@ def connectionListener(connected, info):
          notified[0] = True
          cond.notify()
 
-NetworkTables.initialize(server='10.0.41.104') # Rio
+NetworkTables.initialize(server='10.0.41.104') # T41 Computer. Rio is .2
 NetworkTables.addConnectionListener(connectionListener, immediateNotify=True)
 
 with cond:
